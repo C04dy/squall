@@ -2,6 +2,8 @@
 
 A squirrel C++11 binding
 
+Forked for VergodtEngine
+
 License: Modified BSD
 
 ## To make VM but do nothing

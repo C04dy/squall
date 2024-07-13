@@ -189,7 +189,8 @@ struct Fetch<T*, FC> {
         if (klass_table(vm).find_klass_object<T>(sqo)) {
             check_argument_type<FC>(vm, index, OT_INSTANCE);
             SQUserPointer r;
-            sq_getinstanceup(vm, index, &r, NULL);
+            SQUserPointer type;
+            sq_getinstanceup(vm, index, &r, type, SQTrue);
             return (T*)r;
         } else {
             return (T*)getdata<SQUserPointer, FC>(
