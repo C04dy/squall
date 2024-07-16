@@ -22,8 +22,7 @@ namespace detail {
 template <class C, class V> inline
 SQInteger var_getter(HSQUIRRELVM vm) {
     C* p = nullptr;
-    SQUserPointer type;
-    sq_getinstanceup(vm, 1, (SQUserPointer*)&p, type, SQTrue);
+    sq_getinstanceup(vm, 1, (SQUserPointer*)&p, (SQUserPointer)0, SQTrue);
 		
     typedef V C::*M;
     M* mp = nullptr;
@@ -38,8 +37,7 @@ SQInteger var_getter(HSQUIRRELVM vm) {
 template <class C, class V> inline
 SQInteger var_setter(HSQUIRRELVM vm) {
     C* p = nullptr;
-    SQUserPointer type;
-    sq_getinstanceup(vm, 1, (SQUserPointer*)&p, type, SQTrue);
+    sq_getinstanceup(vm, 1, (SQUserPointer*)&p, (SQUserPointer)0, SQTrue);
 		
     typedef V C::*M;
     M* mp = nullptr;
